@@ -1,0 +1,8 @@
+# Runtime: only what the code imports today. Add a package in the same commit as the code that needs it.
+numpy>=1.26
+pandas>=2.2
+pyarrow>=15.0        # Parquet read/write for pandas
+yfinance>=0.2.55     # 0.2.55+ raises YFRateLimitError, which download.py retries on
+
+# Dev
+pytest>=8.0
