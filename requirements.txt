@@ -3,6 +3,7 @@ numpy>=1.26
 pandas>=2.2
 pyarrow>=15.0        # Parquet read/write for pandas
 yfinance>=0.2.55     # 0.2.55+ raises YFRateLimitError, which download.py retries on
+tzdata               # timezone database for zoneinfo; Windows has none built in
 
 # Dev
 pytest>=8.0
