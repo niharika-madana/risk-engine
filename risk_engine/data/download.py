@@ -6,6 +6,7 @@ Run from the repo root:  python -m risk_engine.data.download
 from __future__ import annotations
 
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from risk_engine.paths import RAW_PRICES_DIR as RAW_DIR
 from pathlib import Path
 
 import pandas as pd
@@ -21,8 +22,6 @@ from risk_engine.utils import retry, timed
 from risk_engine.universe import TICKERS
 
 START = "2007-01-01"
-REPO_ROOT = Path(__file__).resolve().parents[2]   # download.py -> data -> risk_engine -> repo root
-RAW_DIR = REPO_ROOT / "data" / "raw" / "prices"
 
 
 class EmptyDownloadError(Exception):

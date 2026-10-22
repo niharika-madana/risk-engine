@@ -10,8 +10,7 @@ import pandas as pd
 
 from risk_engine.universe import TICKERS
 
-REPO_ROOT = Path(__file__).resolve().parents[2]
-POSITIONS_PATH = REPO_ROOT / "data" / "positions.json"
+from risk_engine.paths import POSITIONS_PATH
 
 
 @dataclass(frozen=True)
