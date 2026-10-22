@@ -1,0 +1,21 @@
+{
+  "as_of": "2026-10-21",
+  "currency": "USD",
+  "pods": {
+    "equity_ls": {
+      "description": "Long developed-market equity, short emerging markets",
+      "capital": 25000000,
+      "positions": {"SPY": 40000000, "EFA": 15000000, "EEM": -10000000}
+    },
+    "rates_macro": {
+      "description": "Long duration, long dollar, gold as a tail hedge",
+      "capital": 30000000,
+      "positions": {"TLT": 30000000, "UUP": 20000000, "GLD": 10000000}
+    },
+    "credit": {
+      "description": "Long investment grade, short high yield, duration-hedged with TLT",
+      "capital": 20000000,
+      "positions": {"LQD": 30000000, "HYG": -15000000, "TLT": -10000000}
+    }
+  }
+}

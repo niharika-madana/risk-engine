@@ -18,8 +18,8 @@ except ImportError:                      # older yfinance: the error doesn't exi
         pass
 
 from risk_engine.utils import retry, timed
+from risk_engine.universe import TICKERS
 
-TICKERS = ["SPY", "EFA", "EEM", "TLT", "LQD", "HYG", "GLD", "UUP"]
 START = "2007-01-01"
 REPO_ROOT = Path(__file__).resolve().parents[2]   # download.py -> data -> risk_engine -> repo root
 RAW_DIR = REPO_ROOT / "data" / "raw" / "prices"
@@ -86,8 +86,6 @@ def download_threaded(tickers: list[str], out_dir: Path = RAW_DIR,
 
 
 if __name__ == "__main__":
-    fetch_prices("SPY")      # warm-up: pays yfinance's one-time setup outside the timings
-    for _ in range(3):       # alternate the two drivers so neither always gets the warm start
-        download_sequential(TICKERS)
-        download_threaded(TICKERS)
+    download_sequential(TICKERS)
+    download_threaded(TICKERS)
     
